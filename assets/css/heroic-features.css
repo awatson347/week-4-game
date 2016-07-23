@@ -1,0 +1,35 @@
+/*!
+ * Start Bootstrap - Heroic Features HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 10px;
+        background: url('../img/background.jpg') center center fixed;
+}
+
+.hero-spacer {
+    margin-top: 0px;
+    height: 40%;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.box {height: 300px;
+	  width: 100%;
+	  padding-left: 5px;
+	  border-radius: 9px;
+	  background-color: #eee; 
+	  margin-bottom: 20px;
+		}
