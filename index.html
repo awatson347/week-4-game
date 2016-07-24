@@ -38,7 +38,8 @@
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
             <h1>Crystals Collector Game!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam,</p>
+            <p>Instructions: You're given a random number at the start of the game. Your goal is to click on the crystals and get your total score to match this number.
+         Clicking on a crystal will add a set amount of points to your total score.</p>
 
 
         </header>
@@ -142,26 +143,26 @@
 
 <script>
     
-    // Generates the number to guess.
+    // Guess.
     var number = Math.floor((Math.random() * 102) + 19);
 
-    // Generates the values for each crystal.
+    // values for each crystal.
     var blue = Math.floor((Math.random() * 12) + 1);
     var red = Math.floor((Math.random() * 12) + 1);
     var yellow = Math.floor((Math.random() * 12) + 1);
     var green = Math.floor((Math.random() * 12) + 1);
 
-    // Setting initial values to 0.
+    // Values to 0.
     var guessTotal = 0;
     var wins = 0;
     var losses = 0;
     var currentStreak = 0;
     var longestStreak = 0;
 
-    // Displays the number you need to guess on the page.
+    // Number you need to guess.
     $(".numberdisplay").html(number);
 
-    // On click events for each crystal.
+    // On click events 
     $(".bluecrystal").click(function() {
         update(blue);
     });
@@ -182,37 +183,37 @@
         $(".instructions").toggle("slow");
     })
 
-    // The reset function is called when you win or lose a game.
+    // The reset function 
     function reset() {
-        // Generates a new number to guess.
+        // Number to guess.
         number = Math.floor((Math.random() * 102) + 19);
         // Displays that number on the page.
         $(".numberdisplay").html(number);
-        // Generates new values for the crystals.
+        // Values for the crystals.
         blue = Math.floor((Math.random() * 12) + 1);
         red = Math.floor((Math.random() * 12) + 1);
         yellow = Math.floor((Math.random() * 12) + 1);
         green = Math.floor((Math.random() * 12) + 1);
         // Resets the total guess to 0.
         guessTotal = 0;
-        // Displays the guess total.
+        // Guess total.
         $(".guessdisplay").html(guessTotal);
     };
 
-    // This function updates the user's total guess. 
+    // User's total guess. 
     function update(color) {
-        // Increases the total guess by the value of the chosen crystal.
+        // Total guess.
         guessTotal += color;
-        // Removes the old total and replaces it with the new total. 
+        // Removes the old total  
         $(".guessdisplay").empty();
         $(".guessdisplay").append(guessTotal);
-        // Checks to see if you win or lose.
+        //total
         if (guessTotal > number) {
             // Adds a loss.
             losses++;
             // Displays updated losses.
             $("#lossesdisplay").html(losses);
-            // Calls the reset function to reset the game.
+            // Reset function game.
             reset();
             // Updates longest streak if it gets broken.
             if (currentStreak > longestStreak) {
@@ -220,26 +221,26 @@
             };
             // Resets current streak.
             currentStreak = 0
-            // Displays the updated streak information.
+            // Updated streak information.
             $("#currentstreakdisplay").html(currentStreak);
             $("#longeststreakdisplay").html(longestStreak);
 
         } else if (guessTotal == number) {
             // Adds a win.
             wins++;
-            // Displays the updated wins.
+            
             $("#winsdisplay").html(wins);
-            // Calls the reset function to reset the game.
+            
             reset();
             // Adds 1 to the current streak.
             currentStreak++;
-            // Displays the current streak.
+            // Current streak.
             $("#currentstreakdisplay").html(currentStreak);
-            // Updates longest streak if it gets broken.
+            //Longest streak 
             if (currentStreak > longestStreak) {
                 longestStreak = currentStreak;
             };
-            // Displays the updated streak information.
+            // Streak information.
             $("#longeststreakdisplay").html(longestStreak);
 
         };
